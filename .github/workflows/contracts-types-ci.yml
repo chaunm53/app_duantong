@@ -1,0 +1,22 @@
+name: Contracts & Types CI
+on:
+  pull_request:
+  push:
+    branches: [ main, master ]
+jobs:
+  contracts-and-types:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm i -w @he-sinh-thai/types -w @he-sinh-thai/ci-tools
+      - run: npm run build:types
+      - run: npm run contracts:check
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: types-generated
+          path: packages/types/src/generated

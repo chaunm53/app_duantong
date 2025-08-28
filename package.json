@@ -6,6 +6,8 @@
     "services/*"
   ],
   "scripts": {
-    "build:types": "npm run build --workspace=@he-sinh-thai/types"
+    "build:types": "npm run build --workspace=@he-sinh-thai/types",
+    "contracts:check": "node packages/ci-tools/scripts/validate-schemas.mjs",
+    "ci:all": "npm run build:types && npm run contracts:check"
   }
 }

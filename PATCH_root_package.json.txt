@@ -1,0 +1,11 @@
+PATCH cho package.json (root)
+-----------------------------------
+Mở file package.json ở THƯ MỤC GỐC của repo, thêm/ghi đè các phần sau:
+
+1) Nếu CHƯA có 'workspaces', thêm:
+  "workspaces": ["packages/*","services/*"],
+
+2) Trong 'scripts', thêm 3 dòng:
+  "build:types": "npm run build --workspace=@he-sinh-thai/types",
+  "contracts:check": "node packages/ci-tools/scripts/validate-schemas.mjs",
+  "ci:all": "npm run build:types && npm run contracts:check"

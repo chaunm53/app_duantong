@@ -1,0 +1,14 @@
+{
+  "name": "@he-sinh-thai/types",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "node ./scripts/generate-types.mjs"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2",
+    "json-schema-to-typescript": "^13.1.1"
+  }
+}

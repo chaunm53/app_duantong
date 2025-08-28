@@ -1,0 +1,11 @@
+{
+  "name": "he-sinh-thai-app",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "build:types": "npm run build --workspace=@he-sinh-thai/types"
+  }
+}

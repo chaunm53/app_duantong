@@ -1,0 +1,12 @@
+{
+  "K_ROOT": "/",
+  "K_DOCS": "docs/",
+  "K_HIEN_PHAP": "docs/00_HienPhapDuAn_TONG.md",
+  "K_DNA": "docs/01_DNA_DaiKa_v3.2.1.md",
+  "K_DB": "docs/DB/",
+  "K_DB_SCHEMA": "docs/DB/01_EcosystemSchema_v1.1.sql",
+  "K_API": "docs/API/",
+  "K_LOGS": "docs/Logs/04_NhatKyDuAn_BanHang.md",
+  "K_PACKAGES": "packages/",
+  "K_SERVICES": "services/"
+}

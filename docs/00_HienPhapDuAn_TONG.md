@@ -14,6 +14,7 @@ updated: 2025-08-28
 1.1. **Lõi IAM là Nguồn Sự thật Duy nhất (SSOT):** Một CSDL/dịch vụ trung tâm (`iam-core`) quản lý định danh (users, profiles) và các tài sản chung (điểm thưởng) của toàn hệ sinh thái.
 1.2. **Vệ tinh Độc lập:** Mỗi ứng dụng/dịch vụ (App Bán hàng, Web Xổ số...) là một "vệ tinh" với CSDL nghiệp vụ riêng, chỉ tham chiếu đến Lõi qua `user_id` (UUID) và không sao chép dữ liệu người dùng.
 1.3. **`schema.sql` là Luật:** Mọi thay đổi cấu trúc CSDL phải được thực hiện dưới dạng file migration được quản lý phiên bản.
+1.4: Hỗ trợ Cấu trúc Phân cấp (Hierarchy): Hệ thống phải được thiết kế để hỗ trợ mô hình kinh doanh đa chi nhánh. Bảng tenants phải có khả năng tự tham chiếu để tạo ra cấu trúc cây (công ty mẹ -> chi nhánh con), cho phép tổng hợp báo cáo ở mọi cấp độ.
 
 ### **Điều 2: Giao tiếp API-First & Hợp đồng Bất biến**
 2.1. **Mọi Giao tiếp qua API:** Tương tác giữa các thành phần (Frontend ↔ Backend, Backend ↔ Backend) phải thông qua API/Webhook đã được định nghĩa.
@@ -36,6 +37,7 @@ updated: 2025-08-28
 ### **Điều 5: Cổng Chất lượng & Kiểm thử (Quality Gates)**
 5.1. **Tự động hóa Kiểm tra (CI):** Mọi thay đổi về code phải vượt qua các bài kiểm tra tự động: linting (kiểm tra lỗi chính tả code), type checking (kiểm tra kiểu dữ liệu), và contract testing (kiểm tra payload có khớp với JSON Schema không).
 5.2. **Kiểm thử Thủ công:** Các luồng chức năng quan trọng phải được kiểm thử End-to-End (E2E) theo kịch bản trước khi phát hành.
+5.3: Trải nghiệm Người dùng là Ưu tiên: Mọi thiết kế (API, CSDL) phải hướng tới việc đơn giản hóa luồng làm việc cho người dùng cuối. CSDL phải hỗ trợ các tính năng gợi ý thông minh (ví dụ: đơn vị mặc định) và API phải hỗ trợ các thao tác hàng loạt (batch operations) để giảm thiểu các bước nhập liệu thủ công.
 
 ### **Điều 6: Cam kết Hiệu năng (Performance)**
 6.1. **Tốc độ Phản hồi (Latency):** API đọc dữ liệu cho người dùng phải có thời gian phản hồi dưới 300ms (p95). API ghi dữ liệu phải dưới 600ms (p95).

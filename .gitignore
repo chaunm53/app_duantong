@@ -1,0 +1,88 @@
+# ===== Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ===== Diagnostic reports
+report.*.json
+
+# ===== Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ===== Coverage
+coverage
+*.lcov
+.nyc_output
+
+# ===== Transpiled / Build outputs
+dist
+build
+out
+.next
+.next/cache
+storybook-static
+
+# ===== Bundlers / Tooling caches
+.vite
+.parcel-cache
+.turbo
+.eslintcache
+.prettiercache
+
+# ===== Node & package managers
+node_modules/
+jspm_packages/
+.pnp.*
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# ===== TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# ===== Env files (keep example)
+.env
+.env.*
+!.env.example
+
+# ===== Test artifacts
+cypress/videos
+cypress/screenshots
+playwright-report/
+test-results/
+blob-report/
+
+# ===== Local certs / keys
+*.pem
+*.crt
+*.key
+
+# ===== Framework/platform
+.vercel
+.firebase
+.netlify
+
+# ===== Editors / IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ===== OS junk
+.DS_Store
+Thumbs.db
+
+# ===== Misc
+.node_repl_history
